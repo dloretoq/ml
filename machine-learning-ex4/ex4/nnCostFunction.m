@@ -75,8 +75,13 @@ L = (lambda/(2*m)) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2)
 J = J + L;
 
 
-for t = 1:m
-	a_1 = X()
+for t = 1:1
+	a_1 = X(t,:);
+	z_2 = a_1 * Theta1';
+	a_2 = sigmoid(z_2);
+	a_2 = [1, a_2];
+	z_3 = a_2 * Theta2';
+	a_3 = sigmoid(z_3);
 end
 
 
