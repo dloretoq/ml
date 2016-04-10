@@ -82,6 +82,11 @@ for t = 1:1
 	a_2 = [1, a_2];
 	z_3 = a_2 * Theta2';
 	a_3 = sigmoid(z_3);
+
+	y_v = zeros(1,num_labels);
+	y_v(y(t,:)) = 1;
+	s_3 = a_3 - y_v;
+
 end
 
 
